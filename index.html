@@ -1,0 +1,110 @@
+<!DOCTYPE html> <!-- Объявление типа документа --> // Объявляет тип документа HTML
+<html lang="en"> // Открытие тега html с указанием языка
+<head> // Открытие тега head
+    <meta charset="UTF-8"> // Установка кодировки символов
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> // Установка области просмотра для адаптивного дизайна
+    <title>PIZZA JS</title> // Заголовок страницы
+    <link rel="stylesheet" href="style.css"> // Подключение файла стилей
+</head>
+<body> // Открытие тега body
+
+    <!-- MAIN PAGE --> // Начало основного содержимого страницы
+    <div class="wrapper mainPage"> // Контейнер для главной страницы
+        <div class="header"> // Заголовок
+            <div class="header_icon_title"> // Контейнер для логотипа и текста заголовка
+                <img src="./assets/icons/logo.png" alt=""> // Логотип
+                <div> // Контейнер для текста
+                    <p class="header_title">PIZZA</p> // Текст заголовка
+                    <p class="header_text">самая вкусная пицца во вселенной</p> // Описание
+                </div>
+            </div>
+        </div>
+        <button class="cart_btn"> // Кнопка корзины
+            <div class="total_price"> // Контейнер для общей суммы
+                <p class="price">0</p> // Сумма
+                <p class="val">KZT</p> // Валюта
+            </div>
+            <div class="line"></div> // Разделительная линия
+            <div class="total_count"> // Контейнер для общего количества товаров
+                <img src="./assets/icons/icon_cart.png" alt=""> // Иконка корзины
+                <p class="count">0</p> // Количество товаров
+            </div>
+        </button>
+        <div class="pizza_type"> // Контейнер для выбора типа пиццы
+            <div class="type_btns"> // Контейнер для кнопок типов пиццы
+                <button class="btn btn_active">Все</button> // Кнопка выбора всех пицц
+                <button class="btn">Мясные</button> // Кнопка выбора мясных пицц
+                <button class="btn">Вегетарианская</button> // Кнопка выбора вегетарианских пицц
+                <button class="btn">Гриль</button> // Кнопка выбора пицц-гриль
+                <button class="btn">Острые</button> // Кнопка выбора острых пицц
+                <button class="btn">Закрытые</button> // Кнопка выбора закрытых пицц
+            </div>
+        </div>
+        <div class="pizza-sort"> // Контейнер для сортировки пиццы
+            <p>Сортировка по:</p> // Текст сортировки
+            <select class="select_pizza"> // Выпадающий список для сортировки
+                <option hidden>выбор</option> // Скрытая опция выбора
+                <option value="price">цене</option> // Опция сортировки по цене
+                <option value="name">алфавиту</option> // Опция сортировки по алфавиту
+            </select>
+        </div>
+        <div class="pizzas"> // Контейнер для списка пицц
+            <h1 class="pizza_items_title">Все пиццы</h1> // Заголовок списка пицц
+            <div class="pizza-items"></div> // Контейнер для элементов пицц
+        </div>
+    </div>
+
+    <!-- CART PAGE --> // Начало содержимого страницы корзины
+    <div class="wrapper cartPage none"> // Контейнер для страницы корзины
+        <div class="header"> // Заголовок
+            <div class="header_icon_title"> // Контейнер для логотипа и текста заголовка
+                <img src="./assets/icons/logo.png" alt="" /> // Логотип
+                <div> // Контейнер для текста
+                    <p class="header_title">PIZZA</p> // Текст заголовка
+                    <p class="header_text">самая вкусная пицца во вселенной</p> // Описание
+                </div>
+            </div>
+        </div>
+        <div class="line"></div> // Разделительная линия
+        <main class="cart_main"> // Основное содержимое корзины
+            <section class="cart_section"> // Секция корзины
+                <div class="cart_title"> // Заголовок корзины
+                    <div class="cart_text"> // Текст заголовка корзины
+                        <img src="./assets/icons/cart.png" alt="" /> // Иконка корзины
+                        <h1>Корзина</h1> // Текст "Корзина"
+                    </div>
+                    <div class="trash_text"> // Текст для очистки корзины
+                        <img src="./assets/icons/trash.png" alt="" /> // Иконка мусорного бака
+                        <p>Очистить корзину</p> // Текст "Очистить корзину"
+                    </div>
+                </div>
+                <div class="cart_items"></div> // Контейнер для элементов корзины
+                <div class="cart_price"> // Контейнер для цены корзины
+                    <div class="cart_price-count"> // Контейнер для количества пицц
+                        <p>Всего пицц: <span class="countPizzas">0</span> шт.</p> // Количество пицц
+                    </div>
+                    <div class="cart_price-total"> // Контейнер для общей суммы заказа
+                        <p>Сумма заказа: <span class="totalPrice">0</span> Р</p> // Общая сумма заказа
+                    </div>
+                </div>
+                <div class="cart_pay"> // Контейнер для кнопок оплаты
+                    <button class="returnMain">Вернуться назад</button> // Кнопка "Вернуться назад"
+                    <button>Оплатить сейчас</button> // Кнопка "Оплатить сейчас"
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- EMPTY PAGE --> // Начало содержимого пустой страницы корзины
+    <div class="wrapper emptyPage none"> // Контейнер для пустой страницы корзины
+        <h1>Корзина пуста</h1> // Текст "Корзина пуста"
+        <p>Вероятней всего, вы не заказывали ещё пиццу. Для того, чтобы заказать пиццу, перейдите на главную страницу.</p> // Описание
+        <img src="./assets/empty.jpg" alt="" /> // Иконка пустой корзины
+        <button class="returnMainInEmpty">Вернуться назад</button> // Кнопка "Вернуться назад"
+    </div>
+
+    <script src="./data.js"></script> // Подключение скрипта data.js
+    <script src="./main.js"></script> // Подключение скрипта main.js
+    <script src="./cart.js"></script> // Подключение скрипта cart.js
+</body>
+</html>
